@@ -73,6 +73,8 @@ This project aims to demonstrate the possibilities of AI-powered search innovati
 
 ![GenSearch Overview](https://github.com/kanikabaskar/Azure-Hackathon-dec/blob/ae9d098eb857e37c608dc5d0c3917f88aa2ab58c/Document.png)
 
+![GenSearch Overview](https://github.com/kanikabaskar/Azure-Hackathon-dec/blob/ae9d098eb857e37c608dc5d0c3917f88aa2ab58c/Architecture.png)
+
 ### Contact
 
 - **Kanika Baskar**
