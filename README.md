@@ -17,7 +17,7 @@ Traditional search engines are limited in their ability to provide accurate, per
 
 This project aims to demonstrate the possibilities of AI-powered search innovation, highlighting how it can revolutionize the way we interact with information online.
 
-![GenSearch Overview](Gensearch.png)
+![GenSearch Overview](https://github.com/kanikabaskar/Azure-Hackathon-dec/blob/ae9d098eb857e37c608dc5d0c3917f88aa2ab58c/GenSearch.png)
 
 ### Features
 
@@ -66,6 +66,12 @@ This project aims to demonstrate the possibilities of AI-powered search innovati
 - **Natural Language Processing (NLP):** Enhances understanding of user queries and document content.
 - **Computer Vision:** Processes images and videos for interactive search experiences.
 - **Speech Recognition:** Supports voice queries in multiple languages.
+  
+![GenSearch Overview](https://github.com/kanikabaskar/Azure-Hackathon-dec/blob/ae9d098eb857e37c608dc5d0c3917f88aa2ab58c/Azure.png)
+
+![GenSearch Overview](https://github.com/kanikabaskar/Azure-Hackathon-dec/blob/ae9d098eb857e37c608dc5d0c3917f88aa2ab58c/Demo.png)
+
+![GenSearch Overview](https://github.com/kanikabaskar/Azure-Hackathon-dec/blob/ae9d098eb857e37c608dc5d0c3917f88aa2ab58c/Document.png)
 
 ### Contact
 
