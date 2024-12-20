@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenSearch</title>
+    <link rel="icon" href="Picture1.png" type="image/x-icon">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #e3f2fd, #c6def2);
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #0a2052;
+        color: #080808;
+        padding: 20px 0;
+        position: static;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 30px;
+      }
+
+      nav ul li a {
+        color: #ffffff;
+        font-weight: 500;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background-color: #5757d7; /* Dark background */
+        color: #ffffff; /* White text for contrast */
+        padding: 60px 20px;
+        text-align: center;
+        padding-right: 10px;
+      }
+
+      .cta-section h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .cta-section p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .cta-btn {
+        background-color: #d4af37;
+        color: #ffffff;
+        padding: 15px 20px;
+        border-radius: 25px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .cta-btn:hover {
+        background-color: #2ca7f3;
+        transform: translateY(-3px);
+      }
+
+      .cta-secondary {
+        background-color: transparent;
+        border: 2px solid #d4af37;
+        color: #d4af37;
+      }
+
+      .cta-secondary:hover {
+        background-color: #2ca7f3;
+        color: #ffffff;
+      }
+
+      h1 {
+        margin-top: 20px;
+        text-align: center;
+        color: #1a1a40;
+        font-size: 2.5em;
+      }
+
+      .form-container {
+        background: white;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+      }
+
+      input[type="text"] {
+        width: 90%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1em;
+      }
+      button,
+      select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1em;
+      }
+
+      button {
+        background-color: #1976d2;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0d47a1;
+      }
+
+      /* Style for the input field to appear like a button */
+      .input-button {
+        margin-left: 650px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: #1a1a40; /* Dark background for the button */
+        color: #ffffff; /* White text */
+        border: none; /* No border */
+        padding: 12px 30px; /* Padding to make the input field larger like a button */
+        font-size: 16px; /* Font size to match button text */
+        font-weight: 600; /* Bold text */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Cursor changes to pointer on hover */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+        text-align: center; /* Center the text inside the input */
+      }
+
+      .input-button:hover {
+        background-color: #d4af37; /* Change background color on hover */
+        transform: translateY(-3px); /* Lift the button on hover */
+      }
+
+      .input-button:focus {
+        outline: none; /* Remove outline when clicked */
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); /* Add a glow effect when focused */
+      }
+
+      .result {
+        padding: 10px;
+        margin-top: 10px;
+        background: #f1f8e9;
+        border-left: 4px solid #4caf50;
+        border-radius: 4px;
+        white-space: pre-wrap;
+        display: none;
+      }
+
+      .error {
+        padding: 10px;
+        margin-top: 10px;
+        background: #ffebee;
+        border-left: 4px solid #f44336;
+        border-radius: 4px;
+        white-space: pre-wrap;
+        display: none;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px 0;
+        background: #061527;
+        color: white;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .loader {
+        display: none;
+        margin: 20px auto;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #0e1924;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #speaking-indicator {
+        display: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ff5722;
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('back') }}">Home</a></li>
+            <li><a href="{{ url_for('back') }}">About</a></li>
+            <li><a href="{{ url_for('back') }}">Features</a></li>
+            <li><a href="{{ url_for('back') }}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <h1>GenSearch</h1>
+
+    <div class="form-container">
+      <h2>Ask a Question</h2>
+      <input
+        type="text"
+        id="question"
+        placeholder="Enter your question"
+        required
+      />
+
+      <!-- Language Selector -->
+      <select id="language">
+        <option value="en-US">English (US)</option>
+        <option value="es-ES">Spanish</option>
+        <option value="fr-FR">French</option>
+        <option value="de-DE">German</option>
+      </select>
+
+      <button id="ask-button">Ask</button>
+      <button id="speak-button">Speak Question</button>
+      <button id="listen-button">Listen to Answer</button>
+
+      <div class="loader" id="loader"></div>
+      <div id="speaking-indicator">Speaking...</div>
+      <div id="answer" class="result"></div>
+      <div id="error" class="error"></div>
+    </div>
+    <div class="but">
+      <form action="http://localhost:5002/" method="get">
+        <input
+          type="submit"
+          value="Go to Document Upload"
+          class="input-button"
+        />
+      </form>
+    </div>
+
+    <footer>
+      © 2024 GenSearch | Powered by Azure OpenAI & Cognitive Services
+    </footer>
+
+    <script>
+      const askButton = document.getElementById("ask-button");
+      const speakButton = document.getElementById("speak-button");
+      const listenButton = document.getElementById("listen-button");
+      const loader = document.getElementById("loader");
+      const answerDiv = document.getElementById("answer");
+      const errorDiv = document.getElementById("error");
+      const questionInput = document.getElementById("question");
+      const languageSelector = document.getElementById("language");
+      const speakingIndicator = document.getElementById("speaking-indicator");
+
+      let currentAudio = null; // To track current audio playback
+
+      // Ask Question
+      askButton.addEventListener("click", async () => {
+        const question = questionInput.value.trim();
+        const language = languageSelector.value;
+
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio = null;
+        }
+
+        answerDiv.style.display = "none";
+        errorDiv.style.display = "none";
+
+        if (!question) {
+          errorDiv.textContent = "Please enter a question.";
+          errorDiv.style.display = "block";
+          return;
+        }
+
+        loader.style.display = "block";
+
+        try {
+          const response = await fetch("/ask", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question, language }),
+          });
+
+          const data = await response.json();
+          loader.style.display = "none";
+
+          if (response.ok) {
+            answerDiv.textContent =
+              data.answer || "No relevant sections found!";
+            answerDiv.style.display = "block";
+          } else {
+            errorDiv.textContent = data.message || "An error occurred!";
+            errorDiv.style.display = "block";
+          }
+
+          questionInput.value = "";
+        } catch (error) {
+          loader.style.display = "none";
+          errorDiv.textContent = "Error querying the system: " + error.message;
+          errorDiv.style.display = "block";
+        }
+      });
+
+      // Text-to-Speech (Listen to Answer)
+      listenButton.addEventListener("click", async () => {
+        const answer = answerDiv.textContent.trim();
+        const language = languageSelector.value;
+
+        if (!answer) {
+          errorDiv.textContent = "No answer available to listen to!";
+          errorDiv.style.display = "block";
+          return;
+        }
+
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio = null;
+        }
+
+        try {
+          const response = await fetch("/tts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: answer, language }),
+          });
+
+          const data = await response.blob();
+          const audioUrl = URL.createObjectURL(data);
+          currentAudio = new Audio(audioUrl);
+          currentAudio.play();
+        } catch (error) {
+          errorDiv.textContent = "Error in text-to-speech: " + error.message;
+          errorDiv.style.display = "block";
+        }
+      });
+
+      // Speech-to-Text (Speak Question)
+      speakButton.addEventListener("click", async () => {
+        const language = languageSelector.value;
+
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio = null;
+        }
+
+        speakingIndicator.style.display = "block";
+
+        try {
+          const response = await fetch("/stt", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ language }),
+          });
+
+          const data = await response.json();
+          speakingIndicator.style.display = "none";
+
+          if (response.ok) {
+            questionInput.value = data.text || "Could not recognize speech.";
+          } else {
+            errorDiv.textContent = data.message || "An error occurred!";
+            errorDiv.style.display = "block";
+          }
+        } catch (error) {
+          speakingIndicator.style.display = "none";
+          errorDiv.textContent = "Error in speech-to-text: " + error.message;
+          errorDiv.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>

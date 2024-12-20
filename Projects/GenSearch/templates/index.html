@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GenSearch</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='images/Picture1.png') }}" type="image/x-icon">
+  </head>
+  <body>
+    <!-- Header Section with Navigation -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>AI Search Innovation</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#services">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="cta">
+          <a href="{{ url_for('signup') }}" class="cta-btn">Sign Up</a>
+          <a href="{{ url_for('login') }}" class="cta-btn">Login</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <h1>GenSearch</h1>
+          <p>
+            Revolutionizing Search Through AI and RAG.<br />
+            GenSearch leverages AI to understand the context behind search
+            queries<br />
+            for more accurate results. Tailors search outputs based on user
+            history and preferences.
+          </p>
+          <div class="image">
+            <img src="{{ url_for('static', filename='images/Picture1.png') }}" alt="Picture">
+          </div>
+          <a href="{{ url_for('Project1') }}" class="btn hero-btn">Get Started</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>About GenSearch</h2>
+        <p>
+          GenSearch is an innovative search platform that leverages the power of Artificial Intelligence (AI) and Retrieval-Augmented Generation (RAG) to transform the way we search for information online. Traditional search engines often provide results based on keywords, leading to generic responses that may not fully address the user's intent. GenSearch overcomes this limitation by utilizing AI to understand the context and intent behind each query, offering highly personalized and relevant search results. By integrating RAG, GenSearch ensures that the search results are dynamically generated, improving the accuracy and specificity of responses. This allows for more efficient and intuitive searches, tailored to the individual user’s needs. <br>
+          <br>
+          Furthermore, with the integration of technologies like natural language processing and computer vision, GenSearch can offer richer, more interactive search experiences. Whether you're looking for images, videos, or in-depth articles, GenSearch enhances the user experience, ensuring that you find exactly what you're looking for—quickly and efficiently. The AI-powered search capabilities are designed to meet the increasing demand for smarter, more intuitive search engines that can process complex queries and deliver context-aware results.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2>Key Features</h2>
+        <div class="feature-box">
+          <div class="feature">
+            <h3>Context-Aware Search with AI and RAG</h3>
+            <p>
+              GenSearch utilizes AI and Retrieval-Augmented Generation (RAG) to understand user intent and context, providing highly accurate and relevant search results. This personalized experience ensures that users receive the most pertinent information based on their queries.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Document Recognition and Interactive Querying</h3>
+            <p>
+              Users can upload documents into GenSearch, which uses advanced document recognition technology to analyze and extract relevant information. This allows users to ask specific questions based on the document's content, enhancing the search experience.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Speech Recognition and Multilingual Support</h3>
+            <p>
+              GenSearch integrates speech recognition, allowing users to voice their queries. In its initial stage, the platform supports four languages, making it more accessible and efficient for users across different linguistic backgrounds.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="services-box">
+          <div class="service">
+            <h3>Kanika Baskar</h3>
+            <p>
+              kanikabaskar13@gmail.com<br>
+              +91 8838482431
+            </p>
+          </div>
+          <div class="service">
+            <h3>DEVESH S B
+            </h3>
+            <p>
+              devesh.22cse@sonatech.ac.in<br>
+              +91 9345973206
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Get Expert Search Experiences!</h2>
+        <p>
+          Transform your search experience with GenSearch  where AI meets personalized insights for smarter results
+        </p>
+        <div class="cta-buttons">
+          <a href="{{ url_for('login') }}" class="cta-btn">Login</a>
+          <a href="{{ url_for('signup') }}" class="cta-btn cta-secondary"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container-1">
+        <center>
+          <p>&copy; 2024 GenSearch. All rights reserved.</p>
+        </center>
+      </div>
+    </footer>
+
+    <!-- Cursor Animation -->
+    <script src="{{ url_for('static',filename='cursor.js') }}"></script>
+  </body>
+</html>

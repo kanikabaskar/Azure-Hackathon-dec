@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Extraction Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Extraction Results</h1>
+        <h2>Extracted Text:</h2>
+        <pre>{{ extracted_text }}</pre>
+        <h2>Summarized Text:</h2>
+        <pre>{{ summarized_text }}</pre>
+
+        <h2>Answer:</h2>
+        <pre>{{ answer }}</pre>
+
+        <h3>Ask a Question:</h3>
+        <form action="/answer" method="post">
+            <input type="hidden" name="extracted_text" value="{{ extracted_text }}">
+            <input type="text" name="question" required>
+            <input type="submit" value="Ask">
+        </form>
+
+        <h3>Download Options:</h3>
+        <a href="/download/pdf?extracted_text={{ extracted_text }}" class="btn">Download as PDF</a>
+        <a href="/download/json?extracted_text={{ extracted_text }}" class="btn">Download as JSON</a>
+    </div>
+</body>
+</html>
