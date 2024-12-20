@@ -17,7 +17,7 @@ Traditional search engines are limited in their ability to provide accurate, per
 
 This project aims to demonstrate the possibilities of AI-powered search innovation, highlighting how it can revolutionize the way we interact with information online.
 
-![GenSearch Overview](images/gensearch_overview.png)
+![GenSearch Overview](Gensearch.png)
 
 ### Features
 
