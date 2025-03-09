@@ -79,12 +79,12 @@ This project aims to demonstrate the possibilities of AI-powered search innovati
 - **Kanika Baskar**
 
   - Email: [kanikabaskar13@gmail.com](mailto:kanikabaskar13@gmail.com)
-  - Phone: +91 8838482431
+  - Phone: +91 8838482431.
 
 - **Devesh S B**
 
   - Email: [devesh.22cse@sonatech.ac.in](mailto:devesh.22cse@sonatech.ac.in)
-  - Phone: +91 9345973206
+  - Phone: +91 9345973206.
 
 ### License
 
