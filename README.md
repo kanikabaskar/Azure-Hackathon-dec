@@ -1,7 +1,7 @@
 # GenSearch
 
 ## Revolutionizing Search Through AI and RAG.
-### Overview
+### Overview.
 
 GenSearch is an innovative search platform that transforms how users interact with information online. By leveraging cutting-edge technologies like Artificial Intelligence (AI) and Retrieval-Augmented Generation (RAG), GenSearch provides accurate, context-aware, and highly personalized search results.
 
